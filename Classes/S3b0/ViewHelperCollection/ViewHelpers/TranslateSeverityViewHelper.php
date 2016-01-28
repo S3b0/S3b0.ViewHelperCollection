@@ -2,6 +2,7 @@
 namespace S3b0\ViewHelperCollection\ViewHelpers;
 
 
+use TYPO3\Flow\Error\Message;
 use TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
@@ -25,11 +26,11 @@ class TranslateSeverityViewHelper extends AbstractViewHelper
         }
 
         switch ($value) {
-            case 'Notice':
+            case Message::SEVERITY_NOTICE:
                 return 'info';
-            case 'Warning':
+            case Message::SEVERITY_WARNING:
                 return 'warning';
-            case 'Error':
+            case Message::SEVERITY_ERROR:
                 return 'danger';
             default:
                 return 'success';
